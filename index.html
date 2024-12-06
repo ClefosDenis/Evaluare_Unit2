@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<head>
+    
+    <title>Clefos Denis</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #palegreen;
+            color: white;
+            height: 150px;
+        }
+
+        header .name-box {
+            background-color: #d9f2d9;
+            color: #333;
+            padding: 30px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 8px;
+            text-align: center;
+            width: 1250px;
+            font-size: 1.2em;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        #about {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        #about h2 {
+            text-align: left;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .profile-pic {
+            display: block;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 5px solid #4CAF50;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+
+   .box {
+    border: 2px solid orange; 
+    padding: 20px;            
+    display: flex;            
+    flex-direction: column;   
+    align-items: center;      
+    justify-content: center;  
+    width: 100%;              
+    box-sizing: border-box;   
+    background-color: #d0e5f4;   
+    text-align: center;       
+}
+
+.box h2 {
+    text-decoration: underline;
+    color: green;
+    margin-bottom: 20px;      
+}
+
+.box img {
+    max-width: 300px;         
+    height: auto;             
+    margin-bottom: 20px;      
+}
+
+.box ul {        
+    padding: 0;               
+    margin: 0;                
+}
+
+.box ul li {
+    margin-bottom: 10px;      
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2px ;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.email-link {
+  display: block; 
+  text-align: right;
+  font-size: 16px; 
+  font-weight: bold;
+}
+
+    #monitoring {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+     .slideshow-container-wrapper {
+            border: 3px solid #4CAF50;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #b1c6e5;
+            text-align: center;
+            width: fit-content;
+            
+        }
+
+        .slideshow-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .slideshow-instruction {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .slideshow-container {
+            width: 300px;
+            height: 100px;
+            border: 2px solid grey;
+            background-color: #d3d3d3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px;   
+        }
+
+        .slide {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+       .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    text-align: center; 
+}
+
+#spteh {
+    color: green; 
+    text-decoration: underline; 
+   </style>
+
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            let slideshowInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+
+            function startSlideshow() {
+                if (slideshowInterval) {
+                    clearInterval(slideshowInterval);
+                }
+                slideshowInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }, 3000);
+            }
+
+            slideshowContainer.addEventListener('dblclick', function () {
+                console.log("Dublu click detectat!");
+                startSlideshow();
+            });
+        });
+    </script>
+
+</head>
+    
+<body>
+    <header>
+        <div class="name-box">
+            <h1>Clefos Denis</h1>  
+        </div>
+    </header>
+    <main>
+        <a href="mailto:Clefos.Io.Denis@student.utcluj.ro" class="email-link">Clefos.Io.Denis@student.utcluj.ro</a>
+        <div class="box">
+            <h2 id="titlu">Structura Retelei Personale</h2>
+            <img src="ip.png" class="profile-pic">
+            <section id="specifications">
+                <h2>Caracteristicile conexiunii la retea</h2>
+                <ul>
+                    <li><strong>Adresa MAC:</strong> 86-D3-28-D7-03-E8</li>
+                    <li><strong>Adresa IP:</strong> 192.168.0.1</li>
+                    <li><strong>Debit la download:</strong> 100 Mbps</li>
+                    <li><strong>Debit la upload:</strong> 50 Mbps</li>
+                </ul>
+            </section>
+        </div>
+
+        
+            <div class="center-container">
+    <h2 id="spteh">Specificatii tehnice ale statiei principale de lucru</h2>
+</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Denumire componentă</th>
+                        <th>Producător</th>
+                        <th>Parametri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procesor</td>
+                        <td>Intel</td>
+                        <td>Intel Core i5-1240P</td>
+                    </tr>
+                    <tr>
+                        <td>Memorie RAM</td>
+                        <td>Kingston</td>
+                        <td>16 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Stocare</td>
+                        <td>Samsung</td>
+                        <td>1 TB SSD</td>
+                    </tr>
+                    <tr>
+                        <td>Placă video</td>
+                        <td>Intel</td>
+                        <td>Intel Iris Xe Graphics</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+
+    <section id="monitoring">
+        <div class="slideshow-container-wrapper">
+            <div class="slideshow-title">Slideshow</div>
+            <div class="slideshow-instruction">Faceți dublu click pe imagine pentru slideshow</div>
+            <div class="slideshow-container">
+                <img src="m1.jpg" alt="Resursa 1" class="slide active">
+                <img src="m2.jpg" alt="Resursa 2" class="slide">
+                <img src="m3.jpg" alt="Resursa 3" class="slide">
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clefos Denis</p>
+    </footer>
+</body>
+
+</html>
